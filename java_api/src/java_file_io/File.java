@@ -7,11 +7,8 @@ public class File {
 	public static void main(String[] args) {
 		
 		
-		System.out.println("Hello world");
 		
-		System.out.println("Connecting Mac to git is Success");
-
-		System.out.println("Second Push on window");
+		System.out.println("Window commit");
  
 	}
 }
