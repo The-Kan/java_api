@@ -10,5 +10,8 @@ public class File {
 		System.out.println("Hello world");
 		
 		System.out.println("Connecting Mac to git is Success");
+
+		System.out.println("Second Push on window");
+ 
 	}
 }
