@@ -9,6 +9,8 @@ public class File {
 		
 		
 		System.out.println("Window commit");
+		
+		System.out.println("Mac commit");
  
 	}
 }
