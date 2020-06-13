@@ -1,12 +1,11 @@
 package kwanggyo;
 
-public class Gwanggyo {
+import world.City;
 
-	public static void main(String[] args) {
-		Building building = new Hillstate();
+public class Gwanggyo extends City{
+
 		
-		System.out.println(building.getName());
-	} 
+	
 	
 	
 }
