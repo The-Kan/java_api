@@ -1,5 +1,9 @@
 package doit;
 
+import java.util.HashSet;
+import java.util.Iterator;
+
+import building.Building;
 import building.BuildingUse;
 import building.Galleria;
 import building.HillState;
@@ -50,19 +54,23 @@ public class Doit {
 
 	private static void getBuildingListofGwanggyo(Gwanggyo gwanggyo) {
 		// TODO Auto-generated method stub
+		HashSet<Building> set = gwanggyo.getBuildingList();
+		set.add(new Building());
+		Iterator<Building> ite = set.iterator();
+				
 		
-	/*	System.out.println("----------- Buildings -----------");
+		System.out.println("----------- Buildings -----------");
 		int size = set.size();
 		for (int i = 0; i < size; i++) {
 
-			Building building = iterator.next();
-			System.out.println(building.getName());
-			System.out.println(building.getBuilding_Use());
-			System.out.println();
+			Building building = ite.next();
+//			System.out.println(building.getName());
+//			System.out.println(building.getBuilding_Use());
+//			System.out.println();
 		}
 
 		System.out.println("---------------------------------");
-*/
+
 	}
 
 	private static void getWorldofGwanggyo(Gwanggyo gwanggyo) {
