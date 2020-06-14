@@ -1,6 +1,10 @@
 package city;
 
+import java.util.HashSet;
+
+import building.Building;
 import country.Country;
+import lake.Lake;
 
 public class City {
 	public String name = "";
@@ -9,7 +13,8 @@ public class City {
 	public String province = "";
 	public int yearly_average_income = 0;
 	public Country country = null;
-	
+	public HashSet<Building> list_Building;
+	public HashSet<Lake> list_Lakes;
 	
 	public int getYearly_average_income() {
 		return yearly_average_income;
@@ -59,6 +64,22 @@ public class City {
 		this.country = country;
 	}
 	
+	public HashSet<Building> getBuildingList(){
+		return list_Building;
+	}
 	
+	public void add_Building(Building building) {
+		list_Building.add(building);
+	}
+	
+	public HashSet<Lake> getLakeList(){
+		return list_Lakes;
+	}
+	
+	public void add_Lake(Lake lake) {
+		list_Lakes.add(lake);
+	}
 
+	
+	
 }

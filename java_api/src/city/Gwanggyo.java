@@ -1,22 +1,16 @@
 package city;
 
 import java.util.HashSet;
-
 import building.Building;
+import lake.Lake;
 
 public class Gwanggyo extends City{
 
-	public HashSet<Building> list_Building;
 	
 	public Gwanggyo() {
 		list_Building = new HashSet<Building>();
+		list_Lakes = new HashSet<Lake>();
 	}
 	
-	public HashSet<Building> getBuildingList(){
-		return list_Building;
-	}
 	
-	public void add_Building(Building building) {
-		list_Building.add(building);
-	}
 }
