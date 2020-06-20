@@ -55,7 +55,7 @@ public class Doit {
 	private static void getBuildingListofGwanggyo(Gwanggyo gwanggyo) {
 		// TODO Auto-generated method stub
 		HashSet<Building> set = gwanggyo.getBuildingList();
-		set.add(new Building());
+		
 		Iterator<Building> ite = set.iterator();
 				
 		
@@ -64,9 +64,9 @@ public class Doit {
 		for (int i = 0; i < size; i++) {
 
 			Building building = ite.next();
-//			System.out.println(building.getName());
-//			System.out.println(building.getBuilding_Use());
-//			System.out.println();
+			System.out.println(building.getName());
+			System.out.println(building.getBuilding_Use());
+			System.out.println();
 		}
 
 		System.out.println("---------------------------------");
@@ -77,9 +77,9 @@ public class Doit {
 		// TODO Auto-generated method stub
 		World world = gwanggyo.getCountry().getWorld();
 //		System.out.println("----------- World -----------");
-		System.out.println("세계 최강국  = " + world.getBest_Country());
-		System.out.println("우리는 모두 " + world.getPlanet() + "에 있습니다");
-		System.out.println("세계 총 인구수 = " + world.getPopulation());
+		System.out.println("�꽭怨� 理쒓컯援�  = " + world.getBest_Country());
+		System.out.println("�슦由щ뒗 紐⑤몢 " + world.getPlanet() + "�뿉 �엳�뒿�땲�떎");
+		System.out.println("�꽭怨� 珥� �씤援ъ닔 = " + world.getPopulation());
 		System.out.println("-----------------------------");
 	}
 
@@ -87,9 +87,9 @@ public class Doit {
 		// TODO Auto-generated method stub
 		Country country = gwanggyo.getCountry();
 		System.out.println("----------- Country -----------");
-		System.out.println("나라의 이름  = " + country.getName());
-		System.out.println("나라의 수도 = " + country.getCapital());
-		System.out.println("대통령 = " + country.getPresident());
+		System.out.println("�굹�씪�쓽 �씠由�  = " + country.getName());
+		System.out.println("�굹�씪�쓽 �닔�룄 = " + country.getCapital());
+		System.out.println("���넻�졊 = " + country.getPresident());
 		System.out.println("-----------------------------");
 	}
 
