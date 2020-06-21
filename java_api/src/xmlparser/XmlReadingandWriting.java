@@ -2,10 +2,15 @@ package xmlparser;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringBufferInputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -61,12 +66,20 @@ public class XmlReadingandWriting {
 		//xml_str = trim(xml_str);
 		//System.out.println(" 시작 " + xml_str + " 끝 ");
 		
-		document = builder.parse(new InputSource(new StringReader(xml_str)));
+		//document = builder.parse(new InputSource(new StringReader(xml_str)));
+		
+		//
+		
+		
+		
+		document = builder.parse(new ByteArrayInputStream(xml_str.getBytes()));
+		
+		//
 		
 		
 		 //문자열 탭만 제거하여 테스트 
-		String test_str = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><Package xmlns=\"http://soap.sforce.com/2006/04/metadata\"><types><members>xyzsite</members><name>CustomSite</name></types><types><members>xyzsite</members><name>Network</name></types><types><members>xyzsite1</members><name>SiteDotCom</name></types><types><members>xyzsite Profile</members><name>Profile</name></types><version>30.0</version></Package>";
-		document = builder.parse(new InputSource(new StringReader(test_str)));
+		//String test_str = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><Package xmlns=\"http://soap.sforce.com/2006/04/metadata\"><types><members>xyzsite</members><name>CustomSite</name></types><types><members>xyzsite</members><name>Network</name></types><types><members>xyzsite1</members><name>SiteDotCom</name></types><types><members>xyzsite Profile</members><name>Profile</name></types><version>30.0</version></Package>";
+		//document = builder.parse(new InputSource(new StringReader(test_str)));
 		
 		
 		
