@@ -1,5 +1,6 @@
 package doit;
 
+import java.util.HashSet;
 import java.util.Iterator;
 
 import building.Building;
@@ -16,14 +17,14 @@ import util.TimeUtil;
 import world.World;
 
 public class Doit {
-	
+
 	public static void main(String[] args) {
 		Gwanggyo gwanggyo = new Gwanggyo();
-	
+
 		// Gwanggyo Init
 		initGwanggyo(gwanggyo);
 
-		// get Information of Gwanggyo 
+		// get Information of Gwanggyo
 		getGwanggyo(gwanggyo);
 		getWorldofGwanggyo(gwanggyo);
 		getCountryofGwanggyo(gwanggyo);
@@ -44,7 +45,7 @@ public class Doit {
 
 	private static void initGwanggyoLake(GwanggyoLake gwanggyoLake, Gwanggyo gwanggyo) {
 		// TODO Auto-generated method stub
-		
+
 		gwanggyoLake.setName("Gwanggyo Lake");
 		gwanggyoLake.setPeakTime(22);
 		gwanggyoLake.setCity(gwanggyo);
@@ -69,20 +70,21 @@ public class Doit {
 	private static String makePeakTimeString(int peakTime) {
 		// TODO Auto-generated method stub
 		String peakTimeStr = "";
-		if(peakTime == 24) peakTime = 0;
-		if(peakTime >= 0 && peakTime < 12) peakTimeStr = peakTime + TimeUtil.AM;
-		else if(peakTime >= 12 && peakTime < 24) peakTimeStr = peakTime + TimeUtil.PM;
+		if (peakTime == 24)
+			peakTime = 0;
+		if (peakTime >= 0 && peakTime < 12)
+			peakTimeStr = peakTime + TimeUtil.AM;
+		else if (peakTime >= 12 && peakTime < 24)
+			peakTimeStr = peakTime + TimeUtil.PM;
 		return peakTimeStr;
 	}
 
 	private static void getBuildingListofGwanggyo(Gwanggyo gwanggyo) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
 		HashSet<Building> set = gwanggyo.getBuildingList();
-		
+
 		Iterator<Building> ite = set.iterator();
-				
-		
+
 		System.out.println("----------- Buildings -----------");
 		int size = set.size();
 		for (int i = 0; i < size; i++) {
@@ -91,38 +93,32 @@ public class Doit {
 			System.out.println(building.getName());
 			System.out.println(building.getBuilding_Use());
 			System.out.println();
-=======
-		Iterator<Building> iterator = gwanggyo.getBuildingList().iterator();
+			Iterator<Building> iterator = gwanggyo.getBuildingList().iterator();
 
-		System.out.println("----------- Buildings -----------");
-		while (iterator.hasNext()) {
-			Building building = iterator.next();
-			System.out.println("Name of Building : " + building.getName());
-			System.out.println("Use of building : " + building.getBuilding_Use());
-			System.out.println("City : " + building.getCity().getName());
-			System.out.println("");
->>>>>>> b1ed8ae7d1bc9fe44e5710348263089cf6812948
+			System.out.println("----------- Buildings -----------");
+			while (iterator.hasNext()) {
+				Building building2 = iterator.next();
+				System.out.println("Name of Building : " + building2.getName());
+				System.out.println("Use of building : " + building2.getBuilding_Use());
+				System.out.println("City : " + building2.getCity().getName());
+				System.out.println("");
+			}
+
+			System.out.println("---------------------------------");
 		}
-
-		System.out.println("---------------------------------");
-		System.out.println("");
-
 	}
 
 	private static void getWorldofGwanggyo(Gwanggyo gwanggyo) {
 		// TODO Auto-generated method stub
 		World world = gwanggyo.getCountry().getWorld();
-<<<<<<< HEAD
 //		System.out.println("----------- World -----------");
 		System.out.println("�꽭怨� 理쒓컯援�  = " + world.getBest_Country());
 		System.out.println("�슦由щ뒗 紐⑤몢 " + world.getPlanet() + "�뿉 �엳�뒿�땲�떎");
 		System.out.println("�꽭怨� 珥� �씤援ъ닔 = " + world.getPopulation());
-=======
 		System.out.println("----------- World -----------");
 		System.out.println("1st Country  = " + world.getBest_Country());
 		System.out.println("We are in " + world.getPlanet());
 		System.out.println("Total Population = " + world.getPopulation());
->>>>>>> b1ed8ae7d1bc9fe44e5710348263089cf6812948
 		System.out.println("-----------------------------");
 		System.out.println("");
 	}
@@ -131,15 +127,15 @@ public class Doit {
 		// TODO Auto-generated method stub
 		Country country = gwanggyo.getCountry();
 		System.out.println("----------- Country -----------");
-<<<<<<< HEAD
+
 		System.out.println("�굹�씪�쓽 �씠由�  = " + country.getName());
 		System.out.println("�굹�씪�쓽 �닔�룄 = " + country.getCapital());
 		System.out.println("���넻�졊 = " + country.getPresident());
-=======
+
 		System.out.println("Name of Country  = " + country.getName());
 		System.out.println("Capital of Country = " + country.getCapital());
 		System.out.println("president of Country = " + country.getPresident());
->>>>>>> b1ed8ae7d1bc9fe44e5710348263089cf6812948
+
 		System.out.println("-----------------------------");
 		System.out.println("");
 	}
@@ -173,17 +169,16 @@ public class Doit {
 		gwanggyo.setPopulation(20000);
 		gwanggyo.setProvince("Gyeonggi-do");
 		gwanggyo.setYearly_average_income(3000);
-		
+
 		Korea korea = new Korea();
 		World world = new World();
-		
-		
+
 		initKorea(korea);
 		initWorld(world);
 
 		korea.setWorld(world);
 		gwanggyo.setCountry(korea);
-		
+
 		HillState hillState = new HillState();
 		initHillState(hillState, gwanggyo);
 
@@ -202,7 +197,6 @@ public class Doit {
 
 		gwanggyo.add_Lake(gwanggyoLake);
 
-		
 	}
 
 	public static void initKorea(Korea korea) {
