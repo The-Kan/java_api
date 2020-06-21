@@ -13,14 +13,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-// DocumentBuilderFactory 를 이용해서 DocumentBuilder 객체를 만든다.
-// DocumentBuilder를 이용해 xml 파일을 파싱 한 후 Document 객체를 만든다.
-// element를 구한후 해당 element에 nodelist를 뽑아 해당 node type 이 NODE.ELEMENT_NODE 타입이라면 엘리먼트로 생성한다.
-// 각 엘리먼트 노드에  NodeName, TextContent, getAttribute 를 이용해 값을 추출할 수 있다.
+// DocumentBuilderFactory 瑜� �씠�슜�빐�꽌 DocumentBuilder 媛앹껜瑜� 留뚮뱺�떎.
+// DocumentBuilder瑜� �씠�슜�빐 xml �뙆�씪�쓣 �뙆�떛 �븳 �썑 Document 媛앹껜瑜� 留뚮뱺�떎.
+// element瑜� 援ы븳�썑 �빐�떦 element�뿉 nodelist瑜� 戮묒븘 �빐�떦 node type �씠 NODE.ELEMENT_NODE ���엯�씠�씪硫� �뿕由щ㉫�듃濡� �깮�꽦�븳�떎.
+// 媛� �뿕由щ㉫�듃 �끂�뱶�뿉  NodeName, TextContent, getAttribute 瑜� �씠�슜�빐 媛믪쓣 異붿텧�븷 �닔 �엳�떎.
 
 public class XmlParserReader_master {
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-		String path = "/Users/ydh/git/java_api/java_api/src/xmlparser";
+		String path = "/Users/ydh/git/java_api/java_api/src/xmlparser";  //Path on Mac
 		String xmlName = "darkmode.xml";
 		String xmlPath = path + File.separator + xmlName;
 		

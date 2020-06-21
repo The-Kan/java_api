@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/doit/Doit.java=UTF-8
+encoding//src/xmlparser/XmlParserReader_master.java=UTF-8
+encoding//src/xmlparser/XmlParserWriter_master.java=UTF-8
+encoding//src/xmlparser/XmlReadingandWriting.java=UTF-8

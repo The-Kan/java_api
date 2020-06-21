@@ -20,13 +20,13 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-//DOM parser, TransformerFactory 를 이용하여 xml파일을 출력한다
-//Element로 NodeName, Attribute, TextContent 를 구성하여 노드끼리의 관계를  정의한다.
+//DOM parser, TransformerFactory 瑜� �씠�슜�븯�뿬 xml�뙆�씪�쓣 異쒕젰�븳�떎
+//Element濡� NodeName, Attribute, TextContent 瑜� 援ъ꽦�븯�뿬 �끂�뱶�겮由ъ쓽 愿�怨꾨��  �젙�쓽�븳�떎.
 
 
 public class XmlParserWriter_master {
 	public static void main(String[] args) throws ParserConfigurationException, TransformerException, IOException {
-		String path = "/Users/ydh/git/java_api/java_api/src/xmlparser";
+		String path = "/Users/ydh/git/java_api/java_api/src/xmlparser"; // Path on MAC
 		String xmlName = "darkmode_output.xml";
 		String xmlPath = path + File.separator + xmlName;
 		
@@ -53,10 +53,10 @@ public class XmlParserWriter_master {
 		TransformerFactory factory = TransformerFactory.newInstance();
 		Transformer transformer = factory.newTransformer();
 		
-		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4"); //정렬 스페이스4칸
+		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4"); //�젙�젹 �뒪�럹�씠�뒪4移�
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //들여쓰기
-        transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "yes"); //doc.setXmlStandalone(true); 했을때 붙어서 출력되는부분 개행
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //�뱾�뿬�벐湲�
+        transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "yes"); //doc.setXmlStandalone(true); �뻽�쓣�븣 遺숈뼱�꽌 異쒕젰�릺�뒗遺�遺� 媛쒗뻾
         		
 		DOMSource source = new DOMSource(document);
 		FileWriter fileWriter = new FileWriter(new File(xmlPath)); 
