@@ -48,7 +48,7 @@ public class XmlReadingandWriting {
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
 		Document document = builder.parse(xmlPath); 
 		
-		// 문자열 없애기
+	
 		TransformerFactory factory = TransformerFactory.newInstance();
 		Transformer transformer = factory.newTransformer();
 		
@@ -61,18 +61,19 @@ public class XmlReadingandWriting {
 		
         
 		String xml_str = writer.toString();
-		
+		//xml_str = deletingIndent(xml_str);
 		//xml_str = xml_str.replaceAll(System.getProperty("line.separator"), "");
 		//xml_str = trim(xml_str);
-		//System.out.println(" 시작 " + xml_str + " 끝 ");
+	
+		System.out.println("시작 " + xml_str + " 끝");
 		
-		//document = builder.parse(new InputSource(new StringReader(xml_str)));
+		document = builder.parse(new InputSource(new StringReader(xml_str)));
 		
 		//
 		
 		
 		
-		document = builder.parse(new ByteArrayInputStream(xml_str.getBytes()));
+		//document = builder.parse(new ByteArrayInputStream(xml_str.getBytes()));
 		
 		//
 		
@@ -166,6 +167,31 @@ public class XmlReadingandWriting {
 		transformer.transform(domSource, result);
 		
 		
+	}
+
+	private static String deletingIndent(String test_str) {
+		// TODO Auto-generated method stub
+		int len = test_str.length();
+		int strNum = 0;
+		int endNum = 0;
+		StringBuilder builder = new StringBuilder();
+		
+		for(int i=0; i<len; i++) {
+			char c = test_str.charAt(i);
+			//System.out.println(i + " = " + c );
+			//System.out.println(i + " = " + (byte)c );
+			if(c == '<') strNum = i;
+			else if( c == '>') {
+				endNum=i+1;
+				builder.append(test_str, strNum, endNum);
+			}
+			
+			
+				
+		}
+		
+		
+		return builder.toString();
 	}
 	
 	
